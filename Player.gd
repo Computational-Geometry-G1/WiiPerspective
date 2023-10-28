@@ -1,7 +1,7 @@
 extends Area2D
 
 
-export var speed = 400  # How fast the player will move (pixels/sec).
+@export var speed = 400  # How fast the player will move (pixels/sec).
 var screen_size 
 
 # Declare member variables here. Examples:
@@ -17,14 +17,14 @@ func explode():
 		points.append(Vector2(randi()%128, randi()%128))
 	
 	
-	var delaunay_points = Geometry.triangulate_delaunay_2d(points)
+	var delaunay_points = Geometry.triangulate_delaunay(points)
 	
 	if not delaunay_points:
 		print("serious error occurred no delaunay points found")
 	
 	#loop over each returned triangle
 	for index in len(delaunay_points) / 3:
-		var shard_pool = PoolVector2Array()
+		var shard_pool = PackedVector2Array()
 		#find the center of our triangle
 		var center = Vector2.ZERO
 		
@@ -85,9 +85,9 @@ func _process(delta):
 		velocity.y -= 1
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
+		$AnimatedSprite2D.play()
 	else:
-		$AnimatedSprite.stop()
+		$AnimatedSprite2D.stop()
 		
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)

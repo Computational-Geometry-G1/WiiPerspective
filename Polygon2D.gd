@@ -1,6 +1,6 @@
 extends Polygon2D
 
-export var rand_color = true
+@export var rand_color = true
 var shard_count = 32
 var shard_velocity_map = {}
 
@@ -15,14 +15,14 @@ func explode():
 		points.append(Vector2(randi()%128, randi()%128))
 	
 	
-	var delaunay_points = Geometry.triangulate_delaunay_2d(points)
+	var delaunay_points = Geometry.triangulate_delaunay(points)
 	
 	if not delaunay_points:
 		print("serious error occurred no delaunay points found")
 	
 	#loop over each returned triangle
 	for index in len(delaunay_points) / 3:
-		var shard_pool = PoolVector2Array()
+		var shard_pool = PackedVector2Array()
 		#find the center of our triangle
 		var center = Vector2.ZERO
 		
