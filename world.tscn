@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmcp585yeyn5o"]
+[gd_scene load_steps=13 format=3 uid="uid://bmcp585yeyn5o"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6ym7i"]
 [ext_resource type="PackedScene" uid="uid://dmggfl6m8br6f" path="res://assets/terrain/terrain1.obj" id="1_khycm"]
 [ext_resource type="PackedScene" uid="uid://cnkgsrhqd65g" path="res://assets/terrain/terrain2.obj" id="2_dscmu"]
 [ext_resource type="PackedScene" uid="uid://0gr6fdj6ml11" path="res://mini_tank.tscn" id="3_50yt4"]
+[ext_resource type="PackedScene" uid="uid://b2omy2ttltiyh" path="res://scene.gltf" id="5_44nai"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nvuu8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -89,3 +90,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.238, 1.8, 3.742)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.889986, 0)
 mesh = SubResource("CapsuleMesh_mhjih")
 skeleton = NodePath("../Camera3D")
+
+[node name="Goal Post" parent="." instance=ExtResource("5_44nai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.0878, 0.50625, -13.3043)
