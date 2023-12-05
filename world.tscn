@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmcp585yeyn5o"]
+[gd_scene load_steps=14 format=3 uid="uid://bmcp585yeyn5o"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6ym7i"]
 [ext_resource type="PackedScene" uid="uid://dmggfl6m8br6f" path="res://assets/terrain/terrain1.obj" id="1_khycm"]
@@ -30,6 +30,9 @@ size = Vector3(80, 0.1, 80)
 data = PackedVector3Array(-40, 0.05, 40, 40, 0.05, 40, -40, -0.05, 40, 40, 0.05, 40, 40, -0.05, 40, -40, -0.05, 40, 40, 0.05, -40, -40, 0.05, -40, 40, -0.05, -40, -40, 0.05, -40, -40, -0.05, -40, 40, -0.05, -40, 40, 0.05, 40, 40, 0.05, -40, 40, -0.05, 40, 40, 0.05, -40, 40, -0.05, -40, 40, -0.05, 40, -40, 0.05, -40, -40, 0.05, 40, -40, -0.05, -40, -40, 0.05, 40, -40, -0.05, 40, -40, -0.05, -40, 40, 0.05, 40, -40, 0.05, 40, 40, 0.05, -40, -40, 0.05, 40, -40, 0.05, -40, 40, 0.05, -40, -40, -0.05, 40, 40, -0.05, 40, -40, -0.05, -40, 40, -0.05, 40, 40, -0.05, -40, -40, -0.05, -40)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mhjih"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bc7i4"]
+height = 1.78981
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_6ym7i")
@@ -90,6 +93,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.238, 1.8, 3.742)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.889986, 0)
 mesh = SubResource("CapsuleMesh_mhjih")
 skeleton = NodePath("../Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.844882, 0)
+shape = SubResource("CapsuleShape3D_bc7i4")
 
 [node name="Goal Post" parent="." instance=ExtResource("5_44nai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.0878, 0.50625, -13.3043)
