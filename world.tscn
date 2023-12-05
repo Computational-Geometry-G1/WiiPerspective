@@ -78,4 +78,4 @@ mesh = SubResource("BoxMesh_neoo4")
 shape = SubResource("ConcavePolygonShape3D_856ua")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6129, 2.53359, 7.14659)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.613, 1.8, 4.147)
