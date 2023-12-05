@@ -22,17 +22,4 @@ func _process(delta):
 	if num_connected > 0:
 		poll()
 	else:
-		#simulate_data(delta)
-		pass
-		
-		
-	#adjust_pos(get_x(), get_y(), null, true)
-	#print(delta)
-	#print(get_position())
-	#print()
-	
-func adjust_pos(x,y,z, absolute=false):
-	if not absolute:
-		self.global_position = Vector3(self.global_position.x+x if x else self.global_position.x, self.global_position.y+y if y else self.global_position.y, self.global_position.z+z if z else self.global_position.z)
-	else:
-		self.global_position = Vector3(x if x else self.global_position.x,y if y else self.global_position.y, z if z else self.global_position.z)
+		simulate_data(delta)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bmcp585yeyn5o"]
+[gd_scene load_steps=17 format=3 uid="uid://bmcp585yeyn5o"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6ym7i"]
 [ext_resource type="PackedScene" uid="uid://dmggfl6m8br6f" path="res://assets/terrain/terrain1.obj" id="1_khycm"]
 [ext_resource type="PackedScene" uid="uid://cnkgsrhqd65g" path="res://assets/terrain/terrain2.obj" id="2_dscmu"]
 [ext_resource type="PackedScene" uid="uid://0gr6fdj6ml11" path="res://mini_tank.tscn" id="3_50yt4"]
+[ext_resource type="Script" path="res://Player.gd" id="5_1wk2e"]
 [ext_resource type="Script" path="res://Kicker.gd" id="5_24mts"]
 [ext_resource type="PackedScene" uid="uid://b2omy2ttltiyh" path="res://scene.gltf" id="5_44nai"]
 [ext_resource type="Script" path="res://GDWiimote.gd" id="6_hfymy"]
@@ -86,6 +87,7 @@ script = ExtResource("6_hfymy")
 
 [node name="Player" type="CharacterBody3D" parent="GDWiimote"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69327, 0)
+script = ExtResource("5_1wk2e")
 
 [node name="Camera3D" type="Camera3D" parent="GDWiimote/Player"]
 
