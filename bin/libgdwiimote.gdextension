@@ -1,0 +1,71 @@
+[configuration]
+
+entry_symbol = "libgdwiimote_init"
+compatibility_minimum = "4.1"
+
+[libraries]
+
+macos.debug = "res://bin/libgdwiimote.macos.template_debug"
+macos = "res://bin/libgdwiimote.macos.template_release"
+windows.debug.x86_32 = "res://bin/libgdwiimote.windows.template_debug.x86_32.dll"
+windows.x86_32 = "res://bin/libgdwiimote.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "res://bin/libgdwiimote.windows.template_debug.x86_64.dll"
+windows.x86_64 = "res://bin/libgdwiimote.windows.template_release.x86_64.dll"
+linux.debug.x86_64 = "res://bin/libgdwiimote.linux.template_debug.x86_64.so"
+linux.x86_64 = "res://bin/libgdwiimote.linux.template_release.x86_64.so"
+linux.debug.arm64 = "res://bin/libgdwiimote.linux.template_debug.arm64.so"
+linux.arm64 = "res://bin/libgdwiimote.linux.template_release.arm64.so"
+linux.debug.rv64 = "res://bin/libgdwiimote.linux.template_debug.rv64.so"
+linux.rv64 = "res://bin/libgdwiimote.linux.template_release.rv64.so"
+
+[dependencies]
+
+
+macos.debug = {
+    "res://bin/libwiiuse.dylib" : ""
+}
+macos = {
+    "res://bin/libwiiuse.dylib" : ""
+}
+windows.debug.x86_32 = {
+    "res://bin/libwiiuse.so" : ""
+}
+windows.x86_32 = {
+    "res://bin/libwiiuse.so" : ""
+}
+windows.debug.x86_64 = {
+    "res://bin/libwiiuse.so" : ""
+}
+windows.x86_64 = {
+    "res://bin/libwiiuse.so" : ""
+}
+linux.debug.x86_64 = {
+    "res://bin/libwiiuse.so" : "",
+    "res://bin/libwiiuse.so.0": "",
+    "res://bin/libwiiuse.so.0.15.5" : ""
+}
+linux.x86_64 = {
+    "res://bin/libwiiuse.so" : "",
+    "res://bin/libwiiuse.so.0": "",
+    "res://bin/libwiiuse.so.0.15.5" : ""
+}
+linux.debug.arm64 = {
+    "res://bin/libwiiuse.so" : "",
+    "res://bin/libwiiuse.so.0": "",
+    "res://bin/libwiiuse.so.0.15.5" : ""
+}
+linux.arm64 = {
+    "res://bin/libwiiuse.so" : "",
+    "res://bin/libwiiuse.so.0": "",
+    "res://bin/libwiiuse.so.0.15.5" : ""
+}
+linux.debug.rv64 = {
+    "res://bin/libwiiuse.so" : "",
+    "res://bin/libwiiuse.so.0": "",
+    "res://bin/libwiiuse.so.0.15.5" : ""
+}
+linux.rv64 = {
+    "res://bin/libwiiuse.so" : "",
+    "res://bin/libwiiuse.so.0": "",
+    "res://bin/libwiiuse.so.0.15.5" : ""
+}
