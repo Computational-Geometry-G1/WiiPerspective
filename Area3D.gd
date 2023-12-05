@@ -24,7 +24,10 @@ func _process(delta):
 
 func _on_body_entered(body):
 	print("some collision",transform.origin)
-	emit_signal("exploded", transform.origin)
+	if body is CharacterBody3D:
+		emit_signal("projectile-hit", transform.origin)
+	else:
+		emit_signal("projectile-missed", transform.origin)
 	queue_free()
 
 
