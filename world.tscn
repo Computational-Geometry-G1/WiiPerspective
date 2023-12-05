@@ -93,3 +93,11 @@ skeleton = NodePath("../Camera3D")
 
 [node name="Goal Post" parent="." instance=ExtResource("5_44nai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.0878, 0.50625, -13.3043)
+
+[node name="Kicker" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.9455, 2.19783, -11.2257)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kicker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.889986, 0)
+mesh = SubResource("CapsuleMesh_mhjih")
+skeleton = NodePath("")
