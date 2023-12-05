@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmcp585yeyn5o"]
+[gd_scene load_steps=16 format=3 uid="uid://bmcp585yeyn5o"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6ym7i"]
 [ext_resource type="PackedScene" uid="uid://dmggfl6m8br6f" path="res://assets/terrain/terrain1.obj" id="1_khycm"]
 [ext_resource type="PackedScene" uid="uid://cnkgsrhqd65g" path="res://assets/terrain/terrain2.obj" id="2_dscmu"]
 [ext_resource type="PackedScene" uid="uid://0gr6fdj6ml11" path="res://mini_tank.tscn" id="3_50yt4"]
+[ext_resource type="Script" path="res://Kicker.gd" id="5_24mts"]
 [ext_resource type="PackedScene" uid="uid://b2omy2ttltiyh" path="res://scene.gltf" id="5_44nai"]
 [ext_resource type="Script" path="res://GDWiimote.gd" id="6_hfymy"]
 
@@ -69,15 +70,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -72.00
 [node name="terrain5" parent="walls" instance=ExtResource("2_dscmu")]
 transform = Transform3D(1.31134e-07, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.31134e-07, -72.0081, -0.405344, 29.2758)
 
-[node name="MiniTank" parent="." instance=ExtResource("3_50yt4")]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -52.5643, 1.45925, -11.2149)
-
-[node name="MiniTank2" parent="." instance=ExtResource("3_50yt4")]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -49.659, 1.45925, -11.2149)
-
-[node name="MiniTank3" parent="." instance=ExtResource("3_50yt4")]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -51.1054, 1.45925, -11.2149)
-
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0.38, -4)
 mesh = SubResource("BoxMesh_neoo4")
@@ -87,9 +79,6 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_856ua")
-
-[node name="Goal Post" parent="." instance=ExtResource("5_44nai")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.0878, 0.50625, -13.3043)
 
 [node name="GDWiimote" type="GDWiimote" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.238, 0.457597, 3.742)
@@ -113,8 +102,21 @@ shape = SubResource("CapsuleShape3D_bc7i4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.945, 2.198, -11.226)
 
 [node name="Kicker" type="Sprite3D" parent="Node3D"]
+script = ExtResource("5_24mts")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Kicker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.889986, 0)
 mesh = SubResource("CapsuleMesh_mhjih")
 skeleton = NodePath("")
+
+[node name="MiniTank" parent="Node3D/Kicker" instance=ExtResource("3_50yt4")]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -1.6193, -0.73875, 0.0110998)
+
+[node name="MiniTank2" parent="Node3D/Kicker" instance=ExtResource("3_50yt4")]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, 1.286, -0.73875, 0.0110998)
+
+[node name="MiniTank3" parent="Node3D/Kicker" instance=ExtResource("3_50yt4")]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -0.1604, -0.73875, 0.0110998)
+
+[node name="Goal Post" parent="Node3D" instance=ExtResource("5_44nai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142799, -1.69175, -2.0783)

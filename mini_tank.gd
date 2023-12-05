@@ -18,14 +18,7 @@ func _physics_process(delta):
 	#var xform = align_with_y(global_transform, n)
 	#global_transform = global_transform.interpolate_with(xform, 12.0 * delta)
 
-func _input(event):
-	#if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-	#	head.rotate_y(-event.relative.x * mouse_sensitivity)
-	#	gun.rotate_y(-event.relative.x * mouse_sensitivity)
-	if Input.is_action_just_pressed("shoot"):
-		#if(rng.randi()%3==0):
-		#	shoot()
-		shoot()
+
 
 func get_input(delta):
 	var vy = velocity.y
