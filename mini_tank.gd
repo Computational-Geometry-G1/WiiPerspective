@@ -19,7 +19,6 @@ func _physics_process(delta):
 	#global_transform = global_transform.interpolate_with(xform, 12.0 * delta)
 
 
-
 func get_input(delta):
 	var vy = velocity.y
 	velocity = Vector3.ZERO
