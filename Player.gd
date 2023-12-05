@@ -9,11 +9,9 @@ func _process(delta):
 	#print()
 	
 func adjust_tilt(x,y,z, absolute=false):
-	x=x*300
-	y=y*300
 	
 	var min_x = 0
-	var max_x = 600
+	var max_x = 60
 	var half_x = (max_x-min_x)/2
 	
 	var tilt = x-(half_x) # +/- half of the max x
@@ -21,6 +19,7 @@ func adjust_tilt(x,y,z, absolute=false):
 	var max_tilt = 45 # degrees
 	
 	tilt = tilt/half_x * max_tilt
+	tilt= -tilt
 	
 	
 	
