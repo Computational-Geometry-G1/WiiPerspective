@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ba4cxvq2eqsw5"
+path="res://.godot/imported/ammo_uzi.obj-98ace980842bd3d4ca2979b4f10d491a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ammo_uzi.obj-98ace980842bd3d4ca2979b4f10d491a.mesh"]
+
+source_file="res://assets/Models/ammo_uzi.obj"
+dest_files=["res://.godot/imported/ammo_uzi.obj-98ace980842bd3d4ca2979b4f10d491a.mesh", "res://.godot/imported/ammo_uzi.obj-98ace980842bd3d4ca2979b4f10d491a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

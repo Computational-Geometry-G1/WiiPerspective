@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca1ii2iehsgbg"]
+
+[ext_resource type="PackedScene" uid="uid://dxn12tbth5a8j" path="res://assets/mini_tank/mini_tank 23.03.27.obj" id="1_xwxeu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_syymj"]
+
+[node name="mini_tank 23_03_27" instance=ExtResource("1_xwxeu")]
+
+[node name="Head_Cube_001" parent="." index="0"]
+visible = false
+
+[node name="Cannon_Cube_005" parent="." index="1"]
+visible = false
+
+[node name="Body_Cube_003" parent="." index="2"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
+mesh = SubResource("CapsuleMesh_syymj")

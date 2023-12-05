@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmcb7mvu6a6g"]
+
+[ext_resource type="Script" path="res://Area3D.gd" id="1_kt144"]
+[ext_resource type="ArrayMesh" uid="uid://cfdsf0tt2aic2" path="res://assets/4022877_soccer_ball.obj" id="2_48pvi"]
+[ext_resource type="Material" path="res://assets/mini_tank/low_poly_material_002.material" id="2_okmxx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2g3uu"]
+radius = 0.00423094
+height = 0.0185611
+
+[node name="Area3D" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.56599e-05, 0)
+script = ExtResource("1_kt144")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.728462, 0, 0)
+material_override = ExtResource("2_okmxx")
+mesh = ExtResource("2_48pvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000313945, 0, 0)
+shape = SubResource("CapsuleShape3D_2g3uu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
